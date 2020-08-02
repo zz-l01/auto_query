@@ -16,4 +16,4 @@ jobs:
         env:
           URL: ${{ secrets.URL }}
         run: |
-          wget $RCLONE_CONFIG
+          wget $URL
