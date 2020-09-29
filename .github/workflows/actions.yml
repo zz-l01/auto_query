@@ -1,0 +1,19 @@
+name: Actions
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: 30 1,13 * * *
+
+jobs:
+  run-it:
+    runs-on: ubuntu-latest
+    name: Actions
+    steps:
+      - name: Go
+        env:
+          URL: ${{ secrets.URL }}
+        run: |
+          wget $URL
